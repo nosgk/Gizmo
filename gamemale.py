@@ -139,7 +139,7 @@ class GamemaleNoCookie:
             )
             if formhash_match:
                 self.post_formhash = formhash_match.group(1)
-                logging.info(f"成功获取论坛主页 formhash: {self.post_formhash}")
+                logging.info(f"已成功获取论坛主页 formhash")
             else:
                 logging.warning("未能在论坛主页获取到 formhash")
         except Exception as e:
@@ -186,7 +186,7 @@ class GamemaleNoCookie:
                 "status": sign_status,
                 "message": message
             }
-            logging.info(f"GameMale 签到结果: {sign_status} | {message}")
+            logging.info(f"GameMale 签到结果: {sign_status}")
 
         except Exception as e:
             logging.error(f"GameMale 签到失败: {e}")
