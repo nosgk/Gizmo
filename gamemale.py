@@ -44,7 +44,7 @@ class GamemaleNoCookie:
 
         loginhash = loginhash_match.group(1)
         formhash = formhash_match.group(1)
-        logging.info(f"获取到 loginhash: {loginhash}, formhash: {formhash}")
+        logging.info(f"已成功获取 loginhash 与 formhash")
         return loginhash, formhash
 
     # 获取并识别验证码
