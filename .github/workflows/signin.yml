@@ -1,0 +1,30 @@
+name: GameMale Auto Sign-in
+
+on:
+  schedule:
+    - cron: '0 16 * * *'  # 每天 UTC 16:00 ，即北京时间 00:00 运行
+  workflow_dispatch:
+
+jobs:
+  signin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: 安装依赖
+        run: |
+          pip install requests ddddocr
+
+      - name: 运行签到脚本
+        env:
+          USERNAME: ${{ secrets.GM_USERNAME }}
+          PASSWORD: ${{ secrets.GM_PASSWORD }}
+        run: |
+          python gamemale.py
