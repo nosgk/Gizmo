@@ -203,6 +203,7 @@ class GamemaleNoCookie:
 
         self.after_login_init()
         self.sign_gamemale()
+        # logging.info(f"GameMale 签到结果: {sign_status} | {message}") 
         logging.info(f"签到最终结果: {self.sign_result}")
 
 
