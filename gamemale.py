@@ -184,7 +184,7 @@ class GamemaleNoCookie:
             self.sign_result = {
                 "site": "GameMale",
                 "status": sign_status,
-                "message": message
+                # "message": message
             }
             logging.info(f"GameMale 签到结果: {sign_status}")
 
@@ -193,7 +193,7 @@ class GamemaleNoCookie:
             self.sign_result = {
                 "site": "GameMale",
                 "status": "签到请求失败",
-                "message": str(e)
+                # "message": str(e)
             }
 
     def run(self):
